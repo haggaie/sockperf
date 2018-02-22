@@ -26,7 +26,7 @@ Description: auto-generated package by debmake
  .
  The synopsis description at the top should be about 60 characters and
  written as a phrase.  No extra capital letters or a final period.  No
- articles — "a", "an", or "the".
+ articles - "a", "an", or "the".
  .
  The package description for general-purpose applications should be
  written for a less technical user.  This means that we should avoid
