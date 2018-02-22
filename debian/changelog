@@ -1,5 +1,5 @@
-__APP_NAME__ (__VERSION__-__RELEASE__) release; urgency=low
+sockperf (3.3-xxx) release; urgency=low
 
   * Initial Release.
 
- -- __MAINTAINER__  __DATE__
+ -- Mellanox Technologies Ltd. <support@mellanox.com>  Thu Feb 22 11:56:36 IST 2018

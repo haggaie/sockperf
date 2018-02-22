@@ -1,4 +1,4 @@
-Source: __APP_NAME__
+Source: sockperf
 Section: unknown
 Priority: extra
 Maintainer: Mellanox Technologies Ltd. <support@mellanox.com>
@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 8.0.0)
 Standards-Version: 3.9.5
 Homepage: http://www.mellanox.com
 
-Package: __APP_NAME__
+Package: sockperf
 Architecture: any
 Multi-Arch: foreign
 Depends: ${misc:Depends}, ${shlibs:Depends}
