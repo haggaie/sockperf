@@ -1,5 +1,5 @@
 Source: sockperf
-Section: unknown
+Section: net
 Priority: extra
 Maintainer: Mellanox Technologies Ltd. <support@mellanox.com>
 Build-Depends: debhelper (>= 8.0.0)
