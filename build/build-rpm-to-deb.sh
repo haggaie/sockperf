@@ -29,5 +29,5 @@ cd $OLD_NAME
 
 dpkg-buildpackage -us -uc # actual build of *.deb
 cd $BASE_DIR
-cp --verbose $TEMP_DIR/*.deb $TEMP_DIR/*.dsc $TEMP_DIR/*.tar.gz $TEMP_DIR/*.debian.tar.xz .
+cp --verbose $TEMP_DIR/*.deb $TEMP_DIR/*.dsc $TEMP_DIR/*.tar.gz $TEMP_DIR/*.debian.tar.xz $TEMP_DIR/*.changes $TEMP_DIR/*.buildinfo .
 rm -rf $TEMP_DIR
