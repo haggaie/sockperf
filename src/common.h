@@ -196,16 +196,7 @@ static inline int msg_recvfrom(int fd, uint8_t *buf, int nbytes, struct sockaddr
     } else
 #endif
     {
-/*
-    When writing onto a connection-oriented socket that has been shut down
-    (by the local or the remote end) SIGPIPE is sent to the writing process
-    and EPIPE is returned. The signal is not sent when the write call specified
-    the MSG_NOSIGNAL flag.
-    Note: another way is call signal (SIGPIPE,SIG_IGN);
- */
-#ifndef WIN32
-        flags = MSG_NOSIGNAL;
-#endif
+    flags = 0;
 
         ret = recvfrom(fd, buf, nbytes, flags, (struct sockaddr *)recvfrom_addr, &size);
 
@@ -251,17 +242,7 @@ static inline int msg_sendto(int fd, uint8_t *buf, int nbytes,
     hexdump(buf, MsgHeader::EFFECTIVE_SIZE);
 #endif /* LOG_TRACE_SEND */
 
-/*
- * MSG_NOSIGNAL:
- * When writing onto a connection-oriented socket that has been shut down
- * (by the local or the remote end) SIGPIPE is sent to the writing process
- * and EPIPE is returned. The signal is not sent when the write call specified
- * the MSG_NOSIGNAL flag.
- * Note: another way is call signal (SIGPIPE,SIG_IGN);
- */
 #ifndef WIN32
-    flags = MSG_NOSIGNAL;
-
     /*
      * MSG_DONTWAIT:
      * Enables non-blocking operation; if the operation would block,

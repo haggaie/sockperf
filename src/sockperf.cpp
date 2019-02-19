@@ -3220,6 +3220,15 @@ int bringup(const int *p_daemonize) {
 
 //------------------------------------------------------------------------------
 void do_test() {
+/*
+    When writing onto a connection-oriented socket that has been shut down
+    (by the local or the remote end) SIGPIPE is sent to the writing process
+    and EPIPE is returned. The signal is not sent when the write call specified
+    the MSG_NOSIGNAL flag.
+    Note: another way is call signal (SIGPIPE,SIG_IGN);
+ */
+    signal(SIGPIPE, SIG_IGN);
+
     handler_info info;
 
     info.id = 0;
