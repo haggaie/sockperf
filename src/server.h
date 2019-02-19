@@ -318,7 +318,7 @@ inline bool Server<IoType, SwitchActivityInfo, SwitchCalcGaps>::server_receive_t
             int length = m_pMsgReply->getLength();
             m_pMsgReply->setHeaderToNetwork();
 
-            ret = msg_sendto(ifd, m_pMsgReply->getBuf(), length, &sendto_addr);
+            ret = msg_sendto(ifd, m_pMsgReply->getBuf(), length, l_fds_ifd->sock_type == SOCK_STREAM ? NULL : &sendto_addr);
             if (unlikely(ret == RET_SOCKET_SHUTDOWN)) {
                 if (l_fds_ifd->sock_type == SOCK_STREAM) {
                     close_ifd(l_fds_ifd->next_fd, ifd, l_fds_ifd);
